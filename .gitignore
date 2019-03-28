@@ -1,0 +1,9 @@
+# OS X
+.DS_Store
+npm-debug.log*
+yarn-error.log
+yarn.lock
+
+# dependencies
+**/node_modules
+/target/

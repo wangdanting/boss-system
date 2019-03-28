@@ -1,0 +1,48 @@
+@import './variables.less';
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: Chinese Quote, -apple-system, BlinkMacSystemFont, Segoe UI, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Helvetica Neue, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+}
+
+#root {
+  width: 100%;
+  min-width: 1000px;
+  height: 100%;
+
+  // 页面右上角按钮
+  .common-right-top-btn {
+    position: absolute;
+    top: 24px;
+    right: 32px;
+  }
+
+  // 表格页面的筛选 margin-bottom设置为0
+  .filter-form {
+    & > .ant-form-item {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// 表单中的-分隔符
+.form-item-separate {
+  position: relative;
+  left: -7px;
+  display: inline-block;
+  text-align: center;
+}
+
+.form-add-circle {
+  margin-left: 10px;
+  color: @basicColor;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+// 表单解释说明
+.form-explanation {
+  color: #999;
+}
