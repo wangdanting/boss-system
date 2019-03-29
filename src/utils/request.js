@@ -52,7 +52,7 @@ axios.interceptors.response.use(
         if ([10002, 10019, 10020].includes(code)) {
           message.error('登陆过期，请重新登陆！');
           setTimeout(() => {
-            window.location.href = '/';
+            window.location.href = '/login';
           }, 2000);
         } else {
           message.error(msg);
