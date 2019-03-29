@@ -49,7 +49,7 @@ const webpackConfig = env => ({
     extensions: ['.js'], // 自动解析确定的扩展, 能够使用户在引入模块时不带扩展, 尽可能的减少后缀尝试的可能性
     modules: [path.resolve(__dirname, 'src'), 'node_modules'] // 告诉 webpack 解析模块时应该搜索的目录, src目录模块搜索优先于node_modules/搜索
   },
-  devtool: env.production ? 'eval' : 'source-maps',
+  // devtool: env.production ? 'eval' : 'source-maps',
   module: {
     rules: [
       {
