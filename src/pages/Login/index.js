@@ -1,5 +1,7 @@
 import React, { PureComponent } from 'react';
+import { connect } from 'react-redux';
 import { Form, Card, Row, Col, Input, Icon, Button } from 'antd';
+import handleLogin from '@/actions/login';
 import { regMobile } from '@/utils/util';
 
 import './index.less';
@@ -18,9 +20,25 @@ class Login extends PureComponent {
     }
   };
 
+  handleSubmit = e => {
+    e.preventDefault();
+    const { form, dispatch } = this.props;
+    form.validateFields((err, values) => {
+      if (!err) {
+        const { account, password } = values;
+        const submitData = {
+          account,
+          password
+        };
+        dispatch(handleLogin(submitData));
+      }
+    });
+  };
+
   render() {
     const {
-      form: { getFieldDecorator }
+      form: { getFieldDecorator },
+      submitting
     } = this.props;
     return (
       <div className='login'>
@@ -30,12 +48,12 @@ class Login extends PureComponent {
               <div className='logo' />
               <h3 className='title'>业务支撑系统</h3>
             </Col>
-            <Col span={2} style={{ height: '100%' }}>
+            <Col span={1} style={{ height: '100%' }}>
               <span className='separate' />
             </Col>
-            <Col span={12}>
+            <Col span={13}>
               <h2 className='subtitle'>用户登录</h2>
-              <Form className='form'>
+              <Form className='form' onSubmit={this.handleSubmit}>
                 <FormItem>
                   {getFieldDecorator('account', {
                     rules: [
@@ -64,7 +82,13 @@ class Login extends PureComponent {
                   )}
                 </FormItem>
                 <FormItem>
-                  <Button type='primary' htmlType='submit' className='btn' size='large'>
+                  <Button
+                    type='primary'
+                    htmlType='submit'
+                    loading={submitting}
+                    className='btn'
+                    size='large'
+                  >
                     登录
                   </Button>
                 </FormItem>
@@ -72,9 +96,16 @@ class Login extends PureComponent {
             </Col>
           </Row>
         </Card>
+        <p className='copyright'>© 2018 重庆物必达网络科技有限公司</p>
       </div>
     );
   }
 }
 
-export default Login;
+const mapStateToProps = state => {
+  return {
+    submitting: state.login.submitting
+  };
+};
+
+export default connect(mapStateToProps)(Login);

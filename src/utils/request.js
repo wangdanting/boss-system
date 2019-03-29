@@ -4,7 +4,7 @@ import Storage from './storage';
 import PubSub from './pubsubmsg';
 import { getCookie } from './util';
 
-export const urlPrefix = '/api/wshop';
+export const urlPrefix = '/api/bp';
 const errorMsg = '网络请求超时，请重新登录!';
 
 const request = async (url, options = {}) => {
@@ -25,11 +25,6 @@ const request = async (url, options = {}) => {
     ...defaultOptions.headers,
     ...options.headers
   };
-
-  // 判断是否是新系统，调用新的Authorization
-  if (options.isNew === 'new') {
-    newOptions.headers.Authorization = Storage.session.get('newAuthorization');
-  }
 
   const configs = { ...defaultOptions, ...newOptions };
   const newUrl = `${options.urlPrefix || urlPrefix}${url}`;
@@ -55,7 +50,6 @@ axios.interceptors.response.use(
       if (status === 400) {
         const { code } = data;
         if ([10002, 10019, 10020].includes(code)) {
-          Storage.session.remove('newAuthorization');
           message.error('登陆过期，请重新登陆！');
           setTimeout(() => {
             window.location.href = '/';
