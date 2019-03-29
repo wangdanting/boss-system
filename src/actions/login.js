@@ -1,4 +1,5 @@
 import qs from 'qs';
+import { push } from 'react-router-redux';
 import request from '@/utils/request';
 import Storage from '@/utils/storage';
 import * as types from '@/constants/login';
@@ -15,10 +16,9 @@ const handleLogin = submitData => dispatch => {
   })
     .then(({ result }) => {
       Storage.session.set('Authorization', result);
-      // const { history } = this.props;
-      // history.push('/dishes/list');
+      dispatch(push('/order/list'));
     })
-    .catch(() => {
+    .finally(() => {
       dispatch(setSubmitting(false));
     });
 };
