@@ -1,4 +1,5 @@
 @images: "../../common";
+@import '../../variables.less';
 
 .sider-bar {
   position: fixed;
@@ -8,6 +9,6 @@
   height: 100vh;
   padding-top: 64px;
   overflow: auto;
-  background: #fff url('@{images}/logo.png') center 15px no-repeat;
+  background: @siderBarBgColor url('@{images}/logo.png') center 15px no-repeat;
   background-size: 99.5px;
 }

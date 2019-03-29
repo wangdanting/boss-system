@@ -41,7 +41,7 @@ class BasicLayout extends PureComponent {
     const { children, history, location } = this.props;
     const { menuData } = this.state;
     return (
-      <Layout className='basic-layout2'>
+      <Layout className='basic-layout'>
         <SideMenu menuData={menuData} location={location} />
         <Layout style={{ marginLeft: 170 }}>
           <Header history={history} />

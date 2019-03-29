@@ -14,7 +14,7 @@ class HeaderDom extends PureComponent {
 
   render() {
     return (
-      <Header className='header-layouts2-dom'>
+      <Header className='header-layouts-dom'>
         <Popconfirm
           placement='bottomRight'
           title='您确定要退出该系统么？'
