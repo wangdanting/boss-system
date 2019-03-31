@@ -1,6 +1,6 @@
 import Login from './pages/Login';
 import BasicLayout from './layouts/BasicLayout';
-import OrderList from './pages/Order/OrderList';
+import OrderQuery from './pages/Order/OrderQuery';
 import OrderDispatch from './pages/Order/OrderDispatch';
 import MapDispatch from './pages/Order/MapDispatch';
 
@@ -30,7 +30,7 @@ export default [
           {
             path: '/order/list',
             name: '订单查询',
-            component: OrderList
+            component: OrderQuery
           },
           {
             path: '/order/dispatch',
