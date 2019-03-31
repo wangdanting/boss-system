@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
 import login from './login';
-import statusQuery from './orderQuery/orderList/statusQuery';
+import orderQuery from './orderQuery';
 
 export default combineReducers({
   login,
-  statusQuery,
+  orderQuery,
   routerReducer
 });

@@ -1,13 +1,15 @@
 import React, { PureComponent, Fragment } from 'react';
-import { Form, Radio, Col, Row } from 'antd';
+import { Form, Radio, Col, Row, DatePicker } from 'antd';
 import { connect } from 'react-redux';
 import moment from 'moment';
 import { handleSearch, changeQueryData } from '@/actions/orderQuery/orderList/statusQuery';
+import Result from './Result';
 
 const FormItem = Form.Item;
 const RadioGroup = Radio.Group;
-// const { RangePicker } = DatePicker;
+const { RangePicker } = DatePicker;
 const dateFormat = 'YYYY-MM-DD';
+const todayRange = [moment(new Date(), dateFormat), moment(new Date(), dateFormat)]; // 时间范围搜索框的默认值
 
 @Form.create()
 class StatusQuery extends PureComponent {
@@ -38,8 +40,12 @@ class StatusQuery extends PureComponent {
         obj[key] = e.target.value;
         break;
       case 'range':
-        obj.expectFetchCurrentStart = moment(e[0]).format(dateFormat);
-        obj.expectFetchCurrentEnd = moment(e[1]).format(dateFormat);
+        obj.expectFetchCurrentStart = moment(e[0])
+          .startOf('day')
+          .valueOf();
+        obj.expectFetchCurrentEnd = moment(e[1])
+          .endOf('day')
+          .valueOf();
         break;
       default:
     }
@@ -47,7 +53,22 @@ class StatusQuery extends PureComponent {
     this.changeStatus(obj);
   };
 
+  /**
+   * 分页改变
+   */
+  changePagination = (current, pageSize) => {
+    const { queryData: prevObj, dispatch } = this.props;
+    const queryData = Object.assign({}, prevObj, { page: current - 1, size: pageSize });
+    dispatch(handleSearch(queryData));
+    dispatch(changeQueryData(queryData));
+  };
+
   render() {
+    const {
+      data,
+      dataTotal,
+      queryData: { page, size }
+    } = this.props;
     return (
       <Fragment>
         <Form className='order-list' layout='inline'>
@@ -73,26 +94,33 @@ class StatusQuery extends PureComponent {
                 </RadioGroup>
               </FormItem>
             </Col>
-            {/* <Col>
+            <Col>
               <FormItem label='日期'>
                 <RangePicker
-                  style={{ width: 220 }}
+                  style={{ width: 250 }}
                   defaultValue={todayRange}
                   format={dateFormat}
                   allowClear={false}
-                  onChange={e => this.onSearchChange(e, 'range')}
+                  onChange={e => this.handleChange(e, 'range')}
                 />
               </FormItem>
-            </Col> */}
+            </Col>
           </Row>
         </Form>
+        <Result
+          data={data}
+          dataTotal={dataTotal}
+          current={page}
+          pageSize={size}
+          handleChange={this.changePagination}
+        />
       </Fragment>
     );
   }
 }
 
 const mapStateToProps = state => {
-  const { data, dataTotal, queryData } = state.statusQuery;
+  const { data, dataTotal, queryData } = state.orderQuery.statusQuery;
   return {
     data,
     dataTotal,

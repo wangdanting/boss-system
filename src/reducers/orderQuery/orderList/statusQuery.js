@@ -1,15 +1,20 @@
 import { combineReducers } from 'redux';
-// import moment from 'moment';
+import moment from 'moment';
 import types from '@/constants/orderQuery/orderList/statusQuery';
 
-// const beginDay = moment().startOf('day');
+const beginDay = moment()
+  .startOf('day')
+  .valueOf();
+const endDay = moment()
+  .endOf('day')
+  .valueOf();
 
 const initialQueryData = {
   status: 'all', // 订单状态
   orderWay: 'all', // 订单类型
   keyWords: '', // 关键字
-  expectFetchCurrentStart: 1553788800000, // 开始时间
-  expectFetchCurrentEnd: 1553875199000, // 结束时间
+  expectFetchCurrentStart: beginDay, // 开始时间
+  expectFetchCurrentEnd: endDay, // 结束时间
   page: 0,
   size: 10
 };
