@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, Tabs } from 'antd';
 import StatusQuery from './OrderList/StatusQuery';
+import KeyQuery from './OrderList/KeyQuery';
 
 const { TabPane } = Tabs;
 
@@ -11,7 +12,7 @@ const OrderList = () => (
         <StatusQuery />
       </TabPane>
       <TabPane tab='关键字查询' key='2'>
-        <div>ddd2</div>
+        <KeyQuery />
       </TabPane>
     </Tabs>
   </Card>

@@ -1,9 +1,9 @@
-import * as types from '@/constants/login';
+import * as types from '@/constants';
 import { combineReducers } from 'redux';
 
 export const submitting = (state = false, action) => {
   switch (action.type) {
-    case types.SET_SUBMITTING:
+    case types.LOGIN_SUBMITTING:
       return action.loading;
     default:
       return state;

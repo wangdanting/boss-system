@@ -2,9 +2,9 @@ import qs from 'qs';
 import { push } from 'react-router-redux';
 import request from '@/utils/request';
 import Storage from '@/utils/storage';
-import * as types from '@/constants/login';
+import * as types from '@/constants';
 
-const setSubmitting = loading => ({ type: types.SET_SUBMITTING, loading });
+const setSubmitting = loading => ({ type: types.LOGIN_SUBMITTING, loading });
 
 const handleLogin = submitData => dispatch => {
   dispatch(setSubmitting(true));
