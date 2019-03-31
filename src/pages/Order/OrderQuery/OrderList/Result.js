@@ -87,7 +87,7 @@ const columns = [
     key: 'operate',
     width: 85,
     render: (text, record) => {
-      return <Link to={`/express/order_list/${record.expressOrderId}`}>查看详情</Link>;
+      return <Link to={`/order/list/detail/${record.expressOrderId}`}>查看详情</Link>;
     }
   },
   {

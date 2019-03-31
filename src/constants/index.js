@@ -1,9 +1,15 @@
+// 登录
 export const LOGIN_SUBMITTING = 'LOGIN_SUBMITTING';
 
+// 订单查询 状态查询
 export const SQ_CHANGE_QUERYDATA = 'SQ_CHANGE_QUERYDATA';
 export const SQ_CHANGE_DATA = 'SQ_CHANGE_DATA';
 export const SQ_CHANGE_DATA_TOTAL = 'SQ_CHANGE_DATA_TOTAL';
 
+// 订单查询 关键字查询
 export const KQ_CHANGE_QUERYDATA = 'KQ_CHANGE_QUERYDATA';
 export const KQ_CHANGE_DATA = 'KQ_CHANGE_DATA';
 export const KQ_CHANGE_DATA_TOTAL = 'KQ_CHANGE_DATA_TOTAL';
+
+// 订单详情
+export const OD_SET_ORDERDETAIL = 'OD_SET_ORDERDETAIL';
