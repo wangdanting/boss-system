@@ -13,3 +13,11 @@ export const KQ_CHANGE_DATA_TOTAL = 'KQ_CHANGE_DATA_TOTAL';
 
 // 订单详情
 export const OD_SET_ORDERDETAIL = 'OD_SET_ORDERDETAIL';
+
+// 订单调度 订单列表
+export const OD_CHANGE_QUERYDATA = 'OD_CHANGE_QUERYDATA';
+export const OD_CHANGE_DATA = 'OD_CHANGE_DATA';
+export const OD_CHANGE_DATA_TOTAL = 'OD_CHANGE_DATA_TOTAL';
+
+// 共同
+export const CM_SET_VOICE_SWITCH = 'CM_SET_VOICE_SWITCH';
