@@ -67,7 +67,7 @@ const columns = [
     key: 'operate',
     width: 100,
     render: (text, record) => {
-      return <Link to={`/express/order_dispatch/${record.expressOrderId}`}>重新分配</Link>;
+      return <Link to={`/order/dispatch/detail/${record.expressOrderId}`}>重新分配</Link>;
     }
   }
 ];

@@ -3,6 +3,7 @@ import BasicLayout from './layouts/BasicLayout';
 import OrderQuery from './pages/Order/OrderQuery';
 import OrderDetail from './pages/Order/OrderQuery/OrderDetail';
 import OrderDispatch from './pages/Order/OrderDispatch';
+import OrderDispatchDetail from './pages/Order/OrderDispatch/OrderDetail';
 import MapDispatch from './pages/Order/MapDispatch';
 
 export default [
@@ -43,7 +44,14 @@ export default [
           {
             path: '/order/dispatch',
             name: '订单调度',
+            exact: true,
             component: OrderDispatch
+          },
+          {
+            path: '/order/dispatch/detail/:id',
+            name: '订单详情',
+            hideInMenu: true,
+            component: OrderDispatchDetail
           },
           {
             path: '/order/map-dispatch',
