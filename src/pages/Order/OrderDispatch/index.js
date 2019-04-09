@@ -62,6 +62,16 @@ class OrderDispatch extends PureComponent {
     dispatch(handleChangeVoiceSwitch(checked));
   };
 
+  /**
+   * 分页改变
+   */
+  changePagination = (current, pageSize) => {
+    const { queryData: prevObj, dispatch } = this.props;
+    const queryData = Object.assign({}, prevObj, { page: current - 1, size: pageSize });
+    dispatch(handleSearch(queryData));
+    dispatch(changeQueryData(queryData));
+  };
+
   render() {
     const {
       data,

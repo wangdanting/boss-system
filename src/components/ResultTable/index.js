@@ -12,6 +12,9 @@ class ResultTable extends PureComponent {
     columns: PropTypes.array, // 表格列的配置描述
     width: PropTypes.string, // 表哥的宽
     keyStr: PropTypes.string.isRequired, // 表格行 key 的取值
+    bordered: PropTypes.bool, // 是否有边框
+    showHeader: PropTypes.bool, // 是否显示表头
+    size: PropTypes.oneOf(['default', 'middle', 'small']), // 表格大小
     handleChange: PropTypes.func // 页码改变的回调和pageSize 变化的回调
   };
 
@@ -22,6 +25,9 @@ class ResultTable extends PureComponent {
     pageSize: 10,
     columns: [],
     width: '100%',
+    bordered: true,
+    showHeader: true,
+    size: 'small',
     handleChange: () => {}
   };
 
@@ -36,7 +42,18 @@ class ResultTable extends PureComponent {
   };
 
   render() {
-    const { data, dataTotal, pageSize, columns, keyStr, width, current } = this.props;
+    const {
+      data,
+      dataTotal,
+      pageSize,
+      columns,
+      keyStr,
+      width,
+      current,
+      bordered,
+      showHeader,
+      size
+    } = this.props;
     const pagination = {
       position: 'bottom',
       showSizeChanger: true,
@@ -54,9 +71,10 @@ class ResultTable extends PureComponent {
           rowKey={record => record[keyStr]}
           columns={columns}
           dataSource={data}
-          bordered
+          bordered={bordered}
+          showHeader={showHeader}
           pagination={pagination}
-          size='small'
+          size={size}
           style={{ minWidth: width }}
         />
       </div>

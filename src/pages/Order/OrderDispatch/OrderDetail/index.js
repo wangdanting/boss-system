@@ -1,7 +1,8 @@
 import React, { PureComponent } from 'react';
-import { Row, Col, Card } from 'antd';
+import { Row, Col } from 'antd';
 import { connect } from 'react-redux';
 import OrderInfo from './OrderInfo';
+import AssignCourier from './AssignCourier';
 import { getOrderInfo, getAllotableCourier } from '@/actions/orderDispatch/orderDetail';
 
 class OrderDetail extends PureComponent {
@@ -23,15 +24,36 @@ class OrderDetail extends PureComponent {
     }
   }
 
+  // /**
+  //  * 分页改变
+  //  */
+  // changePagination = (current, pageSize) => {
+  //   const { queryData: prevObj, dispatch } = this.props;
+  //   const queryData = Object.assign({}, prevObj, { page: current - 1, size: pageSize });
+  //   dispatch(handleSearch(queryData));
+  //   dispatch(changeQueryData(queryData));
+  // };
+
   render() {
-    const { orderInfo } = this.props;
+    const {
+      orderInfo,
+      allotableCourier,
+      dataTotal,
+      queryData: { page, size }
+    } = this.props;
     return (
       <Row>
         <Col xl={12} lg={24} md={24} sm={24} xs={24}>
           <OrderInfo data={orderInfo} />
         </Col>
         <Col xl={12} lg={24} md={24} sm={24} xs={24}>
-          <Card bordered={false} title='请选择配送人员' />
+          <AssignCourier
+            data={allotableCourier}
+            dataTotal={dataTotal}
+            current={page}
+            pageSize={size}
+            handleChange={this.changePagination}
+          />
         </Col>
       </Row>
     );
