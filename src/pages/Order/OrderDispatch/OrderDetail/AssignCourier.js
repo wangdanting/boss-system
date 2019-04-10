@@ -68,6 +68,7 @@ const AssignCourier = React.memo(props => (
       columns={columns}
       size='default'
       keyStr='expressCourierId'
+      className='no-margin-top'
     />
   </Card>
 ));

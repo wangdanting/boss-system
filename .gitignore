@@ -7,3 +7,4 @@ yarn.lock
 # dependencies
 **/node_modules
 /target/
+*.DS_Store

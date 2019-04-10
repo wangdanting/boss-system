@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { Table } from 'antd';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import './index.less';
 
 class ResultTable extends PureComponent {
@@ -52,7 +53,8 @@ class ResultTable extends PureComponent {
       current,
       bordered,
       showHeader,
-      size
+      size,
+      className
     } = this.props;
     const pagination = {
       position: 'bottom',
@@ -65,8 +67,9 @@ class ResultTable extends PureComponent {
       onChange: this.onChange,
       onShowSizeChange: this.onShowSizeChange
     };
+    const cls = classNames('result-table', className);
     return (
-      <div className='result-table'>
+      <div className={cls}>
         <Table
           rowKey={record => record[keyStr]}
           columns={columns}
