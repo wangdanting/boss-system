@@ -46,7 +46,7 @@ class Login extends PureComponent {
           <Row type='flex'>
             <Col span={10}>
               <div className='logo' />
-              <h3 className='title'>业务支撑系统</h3>
+              <h3 className='title'>状态管理案例系统</h3>
             </Col>
             <Col span={1} style={{ height: '100%' }}>
               <span className='separate' />
@@ -65,7 +65,7 @@ class Login extends PureComponent {
                   })(
                     <Input
                       prefix={<Icon type='user' style={{ color: 'rgba(0,0,0,.25)' }} />}
-                      placeholder='请输入登录手机号码'
+                      placeholder='请输入登录手机号码:15000000003'
                       size='large'
                     />
                   )}
@@ -76,7 +76,7 @@ class Login extends PureComponent {
                   })(
                     <Input.Password
                       prefix={<Icon type='unlock' style={{ color: 'rgba(0,0,0,.25)' }} />}
-                      placeholder='请输入密码'
+                      placeholder='请输入密码:111111'
                       size='large'
                     />
                   )}
@@ -96,7 +96,7 @@ class Login extends PureComponent {
             </Col>
           </Row>
         </Card>
-        <p className='copyright'>© 2018 重庆物必达网络科技有限公司</p>
+        <p className='copyright'>© 2018 XXXXXX网络科技有限公司</p>
       </div>
     );
   }

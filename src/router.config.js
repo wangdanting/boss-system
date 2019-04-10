@@ -4,7 +4,7 @@ import OrderQuery from './pages/Order/OrderQuery';
 import OrderDetail from './pages/Order/OrderQuery/OrderDetail';
 import OrderDispatch from './pages/Order/OrderDispatch';
 import OrderDispatchDetail from './pages/Order/OrderDispatch/OrderDetail';
-import MapDispatch from './pages/Order/MapDispatch';
+// import CheckCourier from './pages/Courier/CheckCourier';
 
 export default [
   {
@@ -52,14 +52,26 @@ export default [
             name: '订单详情',
             hideInMenu: true,
             component: OrderDispatchDetail
-          },
-          {
-            path: '/order/map-dispatch',
-            name: '地图调度',
-            component: MapDispatch
           }
         ]
       }
+      // {
+      //   path: '/courier',
+      //   name: '配送员管理',
+      //   icon: 'file-search',
+      //   routes: [
+      //     {
+      //       path: '/courier',
+      //       redirect: '/courier/list'
+      //     },
+      //     {
+      //       path: '/courier/list',
+      //       name: '配送员审核',
+      //       exact: true,
+      //       component: CheckCourier
+      //     }
+      //   ]
+      // }
     ]
   }
 ];
