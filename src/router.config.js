@@ -4,7 +4,7 @@ import OrderQuery from './pages/Order/OrderQuery';
 import OrderDetail from './pages/Order/OrderQuery/OrderDetail';
 import OrderDispatch from './pages/Order/OrderDispatch';
 import OrderDispatchDetail from './pages/Order/OrderDispatch/OrderDetail';
-// import CheckCourier from './pages/Courier/CheckCourier';
+import ManageCourier from './pages/Courier/ManageCourier';
 
 export default [
   {
@@ -54,24 +54,24 @@ export default [
             component: OrderDispatchDetail
           }
         ]
+      },
+      {
+        path: '/courier',
+        name: '配送员管理',
+        icon: 'file-search',
+        routes: [
+          {
+            path: '/courier',
+            redirect: '/courier/list'
+          },
+          {
+            path: '/courier/list',
+            name: '配送员列表',
+            exact: true,
+            component: ManageCourier
+          }
+        ]
       }
-      // {
-      //   path: '/courier',
-      //   name: '配送员管理',
-      //   icon: 'file-search',
-      //   routes: [
-      //     {
-      //       path: '/courier',
-      //       redirect: '/courier/list'
-      //     },
-      //     {
-      //       path: '/courier/list',
-      //       name: '配送员审核',
-      //       exact: true,
-      //       component: CheckCourier
-      //     }
-      //   ]
-      // }
     ]
   }
 ];
