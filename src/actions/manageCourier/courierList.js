@@ -13,3 +13,23 @@ export const handleSearch = queryData => dispatch => {
     dispatch(changeDataTotal(totalCount));
   });
 };
+
+export const setCourierStatus = (id, status) => (dispatch, getState) => {
+  request(`/express_courier/${status}`, {
+    params: { courierId: id },
+    method: 'put'
+  }).then(() => {
+    const { queryData } = getState().manageCourier.courierList;
+    dispatch(handleSearch(queryData));
+  });
+};
+
+export const changeSelectedRowKeys = selectedRowKeys => ({
+  type: types.MC_CHANGE_SELECTEDROWKEYS,
+  selectedRowKeys
+});
+
+export const batchStopCourier = () => (dispatch, getState) => {
+  const { queryData } = getState().manageCourier.courierList;
+  dispatch(handleSearch(queryData));
+};

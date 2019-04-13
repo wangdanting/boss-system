@@ -35,10 +35,21 @@ export const dataTotal = (state = 0, action) => {
   }
 };
 
+// 批量选择的配送员
+export const selectedRowKeys = (state = [], action) => {
+  switch (action.type) {
+    case types.MC_CHANGE_SELECTEDROWKEYS:
+      return action.selectedRowKeys;
+    default:
+      return state;
+  }
+};
+
 const courierList = combineReducers({
   data,
   dataTotal,
-  queryData
+  queryData,
+  selectedRowKeys
 });
 
 export default courierList;

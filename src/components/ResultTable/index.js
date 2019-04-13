@@ -16,7 +16,8 @@ class ResultTable extends PureComponent {
     bordered: PropTypes.bool, // 是否有边框
     showHeader: PropTypes.bool, // 是否显示表头
     size: PropTypes.oneOf(['default', 'middle', 'small']), // 表格大小
-    handleChange: PropTypes.func // 页码改变的回调和pageSize 变化的回调
+    handleChange: PropTypes.func, // 页码改变的回调和pageSize 变化的回调
+    rowSelection: PropTypes.object // 批量操作
   };
 
   static defaultProps = {
@@ -29,6 +30,7 @@ class ResultTable extends PureComponent {
     bordered: true,
     showHeader: true,
     size: 'small',
+    rowSelection: null,
     handleChange: () => {}
   };
 
@@ -54,7 +56,8 @@ class ResultTable extends PureComponent {
       bordered,
       showHeader,
       size,
-      className
+      className,
+      rowSelection
     } = this.props;
     const pagination = {
       position: 'bottom',
@@ -79,6 +82,7 @@ class ResultTable extends PureComponent {
           pagination={pagination}
           size={size}
           style={{ minWidth: width }}
+          rowSelection={rowSelection}
         />
       </div>
     );
