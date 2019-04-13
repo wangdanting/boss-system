@@ -5,6 +5,7 @@ import OrderDetail from './pages/Order/OrderQuery/OrderDetail';
 import OrderDispatch from './pages/Order/OrderDispatch';
 import OrderDispatchDetail from './pages/Order/OrderDispatch/OrderDetail';
 import ManageCourier from './pages/Courier/ManageCourier';
+import AddOrEditCourier from './pages/Courier/ManageCourier/AddOrEditCourier';
 
 export default [
   {
@@ -69,6 +70,18 @@ export default [
             name: '配送员列表',
             exact: true,
             component: ManageCourier
+          },
+          {
+            path: '/courier/list/add',
+            name: '新增配送员',
+            hideInMenu: true,
+            component: AddOrEditCourier
+          },
+          {
+            path: '/courier/list/edit/:id',
+            name: '新增配送员',
+            hideInMenu: true,
+            component: AddOrEditCourier
           }
         ]
       }

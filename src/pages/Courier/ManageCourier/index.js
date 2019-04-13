@@ -81,6 +81,14 @@ class ManageCourier extends PureComponent {
     dispatch(batchStopCourier());
   };
 
+  /**
+   * 新增配送员
+   */
+  goAddMiaoSha = () => {
+    const { history } = this.props;
+    history.push('/courier/list/add');
+  };
+
   render() {
     const {
       data,

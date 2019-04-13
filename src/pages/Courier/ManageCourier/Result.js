@@ -71,14 +71,7 @@ class Result extends PureComponent {
         key: 'operate',
         width: 100,
         render: (text, record) => {
-          return (
-            <Link
-              to={`/express/manage_courier/edit/${record.expressCourierId}`}
-              className='form-link-click'
-            >
-              修改
-            </Link>
-          );
+          return <Link to={`/courier/list/edit/${record.expressCourierId}`}>修改</Link>;
         }
       }
     ];
