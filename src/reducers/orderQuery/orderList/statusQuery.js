@@ -2,10 +2,11 @@ import { combineReducers } from 'redux';
 import moment from 'moment';
 import * as types from '@/constants';
 
-const beginDay = moment()
+const dateFormat = 'YYYY-MM-DD';
+const beginDay = moment(new Date('2019-03-01'), dateFormat)
   .startOf('day')
   .valueOf();
-const endDay = moment()
+const endDay = moment(new Date('2019-05-01'), dateFormat)
   .endOf('day')
   .valueOf();
 

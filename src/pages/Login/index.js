@@ -10,6 +10,9 @@ const FormItem = Form.Item;
 
 @Form.create()
 class Login extends PureComponent {
+  /**
+   * 检查手机格式
+   */
   checkPhone = (rule, value, callback) => {
     if (!value) {
       callback();
@@ -20,6 +23,9 @@ class Login extends PureComponent {
     }
   };
 
+  /**
+   * 登录
+   */
   handleSubmit = e => {
     e.preventDefault();
     const { form, dispatch } = this.props;
@@ -46,7 +52,7 @@ class Login extends PureComponent {
           <Row type='flex'>
             <Col span={10}>
               <div className='logo' />
-              <h3 className='title'>状态管理案例系统</h3>
+              <h3 className='title'>状态管理示例系统</h3>
             </Col>
             <Col span={1} style={{ height: '100%' }}>
               <span className='separate' />

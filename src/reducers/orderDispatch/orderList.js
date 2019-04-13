@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 import * as types from '@/constants';
 
 const initialQueryData = {
-  status: 'all', // 订单状态
+  status: 'allocated', // 订单状态
   expressOrderId: '', // 订单号
   orderWay: 'all',
   page: 0,

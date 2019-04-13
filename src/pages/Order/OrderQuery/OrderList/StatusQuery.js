@@ -9,7 +9,10 @@ const FormItem = Form.Item;
 const RadioGroup = Radio.Group;
 const { RangePicker } = DatePicker;
 const dateFormat = 'YYYY-MM-DD';
-const todayRange = [moment(new Date(), dateFormat), moment(new Date(), dateFormat)]; // 时间范围搜索框的默认值
+const todayRange = [
+  moment(new Date('2019-03-01'), dateFormat),
+  moment(new Date('2019-05-01'), dateFormat)
+]; // 时间范围搜索框的默认值
 
 @Form.create()
 class StatusQuery extends PureComponent {

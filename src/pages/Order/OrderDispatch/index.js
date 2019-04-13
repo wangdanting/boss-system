@@ -15,7 +15,8 @@ const RadioGroup = Radio.Group;
 @Form.create()
 class OrderDispatch extends PureComponent {
   componentDidMount() {
-    const { dispatch } = this.props;
+    const { dispatch, queryData } = this.props;
+    dispatch(handleSearch(queryData));
     dispatch(getVoiceSwitchStatus());
   }
 
@@ -85,12 +86,9 @@ class OrderDispatch extends PureComponent {
           <Row>
             <Col>
               <FormItem label='订单状态'>
-                <RadioGroup
-                  defaultValue='notallocat'
-                  onChange={e => this.handleChange(e, 'status')}
-                >
-                  <Radio value='notallocat'>未分配</Radio>
+                <RadioGroup defaultValue='allocated' onChange={e => this.handleChange(e, 'status')}>
                   <Radio value='allocated'>已分配</Radio>
+                  <Radio value='notallocat'>未分配</Radio>
                   <Radio value='sending'>配送中</Radio>
                 </RadioGroup>
               </FormItem>

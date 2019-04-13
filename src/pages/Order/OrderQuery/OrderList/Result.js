@@ -89,18 +89,6 @@ const columns = [
     render: (text, record) => {
       return <Link to={`/order/list/detail/${record.expressOrderId}`}>查看详情</Link>;
     }
-  },
-  {
-    title: '修改配送员',
-    dataIndex: 'status',
-    key: 'status',
-    width: 95,
-    render: (text, record) => {
-      if (record.statusName === '已送达') {
-        return <Link to={`/express/change_courier/${record.expressOrderId}`}>修改配送员</Link>;
-      }
-      return <span style={{ color: 'rgba(0,0,0,.25)' }}>修改配送员</span>;
-    }
   }
 ];
 

@@ -24,7 +24,7 @@ export default [
       },
       {
         path: '/order',
-        name: '订单管理',
+        name: '状态筛选',
         icon: 'file-search',
         routes: [
           {
@@ -33,19 +33,19 @@ export default [
           },
           {
             path: '/order/list',
-            name: '订单查询',
+            name: '状态查询',
             exact: true,
             component: OrderQuery
           },
           {
             path: '/order/list/detail/:id',
-            name: '订单详情',
+            name: '详情展示',
             hideInMenu: true,
             component: OrderDetail
           },
           {
             path: '/order/dispatch',
-            name: '订单调度',
+            name: '全局参数',
             exact: true,
             component: OrderDispatch
           },
@@ -59,7 +59,7 @@ export default [
       },
       {
         path: '/courier',
-        name: '配送员管理',
+        name: '表单状态',
         icon: 'file-search',
         routes: [
           {
@@ -68,19 +68,19 @@ export default [
           },
           {
             path: '/courier/list',
-            name: '配送员列表',
+            name: '批量操作',
             exact: true,
             component: ManageCourier
           },
           {
             path: '/courier/list/add',
-            name: '新增配送员',
+            name: '表单管理(新增)',
             hideInMenu: true,
             component: AddOrEditCourier
           },
           {
             path: '/courier/list/edit/:id',
-            name: '新增配送员',
+            name: '表单管理(编辑)',
             hideInMenu: true,
             component: AddOrEditCourier
           }
@@ -88,7 +88,7 @@ export default [
       },
       {
         path: '/setting',
-        name: '配送设置',
+        name: '状态设置',
         icon: 'file-search',
         routes: [
           {
@@ -97,7 +97,7 @@ export default [
           },
           {
             path: '/setting/form',
-            name: '普通配送设置',
+            name: 'tabs设置',
             component: DeliverySettings
           }
         ]
