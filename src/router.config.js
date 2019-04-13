@@ -6,6 +6,7 @@ import OrderDispatch from './pages/Order/OrderDispatch';
 import OrderDispatchDetail from './pages/Order/OrderDispatch/OrderDetail';
 import ManageCourier from './pages/Courier/ManageCourier';
 import AddOrEditCourier from './pages/Courier/ManageCourier/AddOrEditCourier';
+import DeliverySettings from './pages/DeliverySettings';
 
 export default [
   {
@@ -82,6 +83,22 @@ export default [
             name: '新增配送员',
             hideInMenu: true,
             component: AddOrEditCourier
+          }
+        ]
+      },
+      {
+        path: '/setting',
+        name: '配送设置',
+        icon: 'file-search',
+        routes: [
+          {
+            path: '/setting',
+            redirect: '/setting/form'
+          },
+          {
+            path: '/setting/form',
+            name: '普通配送设置',
+            component: DeliverySettings
           }
         ]
       }

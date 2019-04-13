@@ -189,7 +189,7 @@ class AddOrEditCourier extends PureComponent {
       }
     };
     return (
-      <Card title='配送员基础信息' bordered={false} className='block'>
+      <Card title='配送员基础信息' bordered={false}>
         <Form>
           <FormItem {...formItemLayout} label='姓名'>
             {getFieldDecorator('name', {
