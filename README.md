@@ -99,8 +99,8 @@ $ yarn lint:fix
 
 <div align="center">
 
-  ![新增表单](/src/excludeFile/7.jpg)
-  ![编辑表单](/src/excludeFile/8.jpg)
+  ![新增表单](/src/excludeFile/9.jpg)
+  ![编辑表单](/src/excludeFile/10.jpg)
 
 </div>
 
