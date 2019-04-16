@@ -14,3 +14,12 @@
 - 使用redux相关技术:[react-redux](https://react-redux.js.org/)、[react-router-redux](https://github.com/reactjs/react-router-redux)、[redux-logger](https://www.npmjs.com/package/redux-logger)、[redux-thunk](https://github.com/reduxjs/redux-thunk)、[reselect](https://github.com/reduxjs/reselect)
 - 使用的网路请求库：[axios](https://github.com/axios/axios)
 - 搭建环境技术：[webpack](https://webpack.js.org/)、[babel](https://babeljs.io/)、[eslint](https://eslint.org/)、[prettier](https://prettier.io/)、[stylelint](https://stylelint.io/)、[husky](https://www.npmjs.com/package/husky)、[lint-staged](https://www.npmjs.com/package/lint-staged)
+
+## 参与人员
+
+```bash
+$ git clone git@github.com:wangdanting/redux-template-system.git
+$ cd wbd-web-wshop-client
+$ yarn install
+$ yarn start         # 访问 http://localhost:8087
+```
