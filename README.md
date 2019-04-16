@@ -15,11 +15,19 @@
 - 使用的网路请求库：[axios](https://github.com/axios/axios)
 - 搭建环境技术：[webpack](https://webpack.js.org/)、[babel](https://babeljs.io/)、[eslint](https://eslint.org/)、[prettier](https://prettier.io/)、[stylelint](https://stylelint.io/)、[husky](https://www.npmjs.com/package/husky)、[lint-staged](https://www.npmjs.com/package/lint-staged)
 
-## 参与人员
+## 命令行
+
+- `启动项目`
 
 ```bash
 $ git clone git@github.com:wangdanting/redux-template-system.git
-$ cd wbd-web-wshop-client
+$ cd redux-template-system
 $ yarn install
 $ yarn start         # 访问 http://localhost:8087
+```
+
+- `fix格式项目`(提交代码时会进行代码格式的检查，如果报错，则在命令行中输入👇命令，查看报错原因)
+
+```bash
+$ yarn lint:fix
 ```
