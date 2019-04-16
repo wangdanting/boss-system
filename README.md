@@ -74,3 +74,14 @@ $ yarn lint:fix
 - router.config.js (路由配置)
 - variables.less (less变量)
 ```
+
+## 案例
+
+- 关键字查询列表与详情页
+
+<div align="center">
+
+  ![状态查询列表](/src/excludeFile/4.jpg)
+  ![详情列表](/src/excludeFile/3.png)
+
+</div>

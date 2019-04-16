@@ -1,9 +1,4 @@
----
-order: 2
-title: isEdit
----
-
-编辑图片。
+## 编辑图片。
 
 ![编辑图片示例](../../../excludeFile/upload-img-edit.png)
 

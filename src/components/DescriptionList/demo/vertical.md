@@ -1,10 +1,4 @@
----
-order: 2
-title:
-  zh-CN: 垂直型
----
-
-垂直布局。
+## 垂直布局。
 
 ![垂直布局描述列表图片示例](../../../excludeFile/description-list-vertical.png)
 

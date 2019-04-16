@@ -1,9 +1,4 @@
----
-order: 1
-title: ResultTable
----
-
-含有分页的table页。
+## 含有分页的table页。
 
 ![含有分页的table页图片示例](../../../excludeFile/result-table.png)
 

@@ -1,10 +1,5 @@
----
-order: 0
-title:
-  zh-CN: 基本
----
 
-基本描述列表。
+## 基本描述列表。
 
 ![基本描述列表图片示例](../../../excludeFile/description-list-basic.png)
 

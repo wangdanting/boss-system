@@ -1,9 +1,5 @@
----
-order: 1
-title: ResultTable
----
 
-表单页最下面的按钮。
+## 表单页最下面的按钮。
 
 ![表单页最下面的按钮图片示例](../../../excludeFile/btn-group.png)
 
