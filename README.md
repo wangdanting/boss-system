@@ -94,3 +94,65 @@ $ yarn lint:fix
   ![编辑表单](/src/excludeFile/6.jpg)
 
 </div>
+
+- 批量操作
+
+<div align="center">
+
+  ![新增表单](/src/excludeFile/7.jpg)
+  ![编辑表单](/src/excludeFile/8.jpg)
+
+</div>
+
+## 开发约定
+
+- 页面的初始数据 必须写注释
+
+```
+state = {
+  provinceList: [], // 省份列表
+  cityList: [], // 市区列表
+  districtList: [], // 县列表
+}
+```
+
+- 页面的方法 必须写注释
+
+```
+/**
+  *  查询计费规则
+  */
+showModal = () => {
+  this.setState({
+    isShow: true
+  })
+}
+```
+
+- 封装公共方法 要写清楚注释和参数格式和返回格式
+
+```
+/**
+  * 手机号格式化
+  * @param {string | number} mobile 手机号
+  * @returns '188 8888 8888'格式的手机号
+  */
+const formatMobile = (mobile) => {
+  if (!(regMobile.test(mobile))) {
+    return '';
+  }
+  return String(mobile).replace(/(^\d{3}|\d{4}\B)/g, "$1 ");
+};
+```
+
+- 封装公共组件，需写demo
+
+- 公共的样式变量需引用 variables.less
+
+```
+@import './variables.less';
+
+.abc {
+  color: @basicColor;
+}
+```
