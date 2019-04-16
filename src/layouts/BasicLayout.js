@@ -42,9 +42,9 @@ class BasicLayout extends PureComponent {
     const { menuData } = this.state;
     return (
       <Layout className='basic-layout'>
-        <SideMenu menuData={menuData} location={location} />
+        <Header history={history} />
         <Layout style={{ marginLeft: 170 }}>
-          <Header history={history} />
+          <SideMenu menuData={menuData} location={location} />
           <Content className='content'>
             <MenuContext.Provider value={this.getContext()}>
               <PageWrapper location={location}>{children}</PageWrapper>

@@ -52,7 +52,7 @@ class Login extends PureComponent {
           <Row type='flex'>
             <Col span={10}>
               <div className='logo' />
-              <h3 className='title'>状态管理示例系统</h3>
+              <h3 className='title'>状态管理模版系统</h3>
             </Col>
             <Col span={1} style={{ height: '100%' }}>
               <span className='separate' />

@@ -129,7 +129,7 @@ class BaseMenu extends PureComponent {
     }
     return (
       <Menu
-        theme='light'
+        theme='dark'
         mode='inline'
         selectedKeys={selectedKeys}
         onOpenChange={this.handleOpenChange}
