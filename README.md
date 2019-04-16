@@ -91,6 +91,6 @@ $ yarn lint:fix
 <div align="center">
 
   ![新增表单](/src/excludeFile/5.jpg)
-  ![编辑表单](/src/excludeFile/6.png)
+  ![编辑表单](/src/excludeFile/6.jpg)
 
 </div>
