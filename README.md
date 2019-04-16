@@ -17,7 +17,7 @@
 
 ## 命令行
 
-- `启动项目`
+#### `启动项目`
 
 ```bash
 $ git clone git@github.com:wangdanting/redux-template-system.git
@@ -26,7 +26,7 @@ $ yarn install
 $ yarn start         # 访问 http://localhost:8087
 ```
 
-- `fix格式项目`(提交代码时会进行代码格式的检查，如果报错，则在命令行中输入👇命令，查看报错原因)
+#### `fix格式项目`(提交代码时会进行代码格式的检查，如果报错，则在命令行中输入👇命令，查看报错原因)
 
 ```bash
 $ yarn lint:fix
