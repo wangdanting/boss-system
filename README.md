@@ -4,8 +4,10 @@
 
   ##### 一个简单的使用redux状态管理的系统模版
 
-  ![登录页面](/src/excludeFile/login.jpg)
-  ![状态查询列表](/src/excludeFile/1.jpg)
+  <img src="./src/excludeFile/login.jpg" width="400px">
+
+  <img src="./src/excludeFile/1.jpg" width="400px">
+
 </div>
 
 - 使用框架：[react](https://reactjs.org/)、
@@ -37,8 +39,9 @@ $ yarn start         # 访问 http://localhost:8087
 
 <div align="center">
 
-  ![状态查询列表](/src/excludeFile/4.jpg)
-  ![详情列表](/src/excludeFile/3.png)
+  <img src="./src/excludeFile/4.jpg" width="400px">
+
+  <img src="./src/excludeFile/3.jpg" width="400px">
 
 </div>
 
@@ -46,8 +49,9 @@ $ yarn start         # 访问 http://localhost:8087
 
 <div align="center">
 
-  ![新增表单](/src/excludeFile/5.jpg)
-  ![编辑表单](/src/excludeFile/6.jpg)
+  <img src="./src/excludeFile/5.jpg" width="400px">
+
+  <img src="./src/excludeFile/6.png" width="400px">
 
 </div>
 
@@ -55,8 +59,9 @@ $ yarn start         # 访问 http://localhost:8087
 
 <div align="center">
 
-  ![新增表单](/src/excludeFile/9.jpg)
-  ![编辑表单](/src/excludeFile/10.jpg)
+  <img src="./src/excludeFile/9.jpg" width="400px">
+  
+  <img src="./src/excludeFile/10.jpg" width="400px">
 
 </div>
 
