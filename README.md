@@ -20,7 +20,7 @@
 ## 特性
 
 - 可直接使用：已完成基本的配置，可直接写业务
-- 使用antd: 开箱即用的高质量 React 组件
+- 使用antd： 开箱即用的高质量 React 组件
 - 共享状态：利用redux状态管理器
 - 代码检测：利用eslint以及stylelint对您写的代码进行规范检测，如果不通过规范，则不能提交代码
 
@@ -139,7 +139,86 @@ export default [
 
 具体请看例子参考
 
+### 请求
+
+运用已经封装好的request，下面👇为例子
+
+```javascript
+  import request from '@/utils/request';
+
+  request('/sessions/create', {
+    method: 'post',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    data: qs.stringify(submitData)
+  })
+    .then(({ result }) => {
+      Storage.session.set('Authorization', result);
+      dispatch(push('/order/list'));
+    })
+    .finally(() => {
+      dispatch(setSubmitting(false));
+    });
+```
+
 ### 状态管理
+
+将要执行的动作命名 将文件放在 `/src/constants`下，下面👇为例子
+
+```javascript
+  // 登录
+  export const LOGIN_SUBMITTING = 'LOGIN_SUBMITTING';
+```
+
+[Action](https://redux.js.org/basics/actions) 将文件放在 `/src/actions` 下，下面👇为例子
+
+```javascript
+  const setSubmitting = loading => ({ type: types.LOGIN_SUBMITTING, loading });
+```
+
+[Middleware](https://redux.js.org/advanced/middleware) 中间件实现，下面👇为例子
+
+```javascript
+const setSubmitting = loading => ({ type: types.LOGIN_SUBMITTING, loading });
+
+const handleLogin = submitData => dispatch => {
+  dispatch(setSubmitting(true));
+
+  request('/sessions/create', {
+    method: 'post',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    data: qs.stringify(submitData)
+  })
+    .then(({ result }) => {
+      Storage.session.set('Authorization', result);
+      dispatch(push('/order/list'));
+    })
+    .finally(() => {
+      dispatch(setSubmitting(false));
+    });
+};
+```
+
+[reducers](https://redux.js.org/basics/reducers)，下面👇为例子
+
+```javascript
+import * as types from '@/constants';
+import { combineReducers } from 'redux';
+
+export const submitting = (state = false, action) => {
+  switch (action.type) {
+    case types.LOGIN_SUBMITTING:
+      return action.loading;
+    default:
+      return state;
+  }
+};
+
+const login = combineReducers({
+  submitting
+});
+
+export default login;
+```
 
 ## 代码检测
 
